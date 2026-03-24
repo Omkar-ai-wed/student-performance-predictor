@@ -1,0 +1,47 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "StudentRecord",
+  "type": "object",
+  "required": [
+    "attendance_rate",
+    "weekly_study_hours",
+    "past_exam_scores"
+  ],
+  "properties": {
+    "attendance_rate": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 100,
+      "description": "Percentage of classes attended (0\u2013100)."
+    },
+    "weekly_study_hours": {
+      "type": "number",
+      "minimum": 0,
+      "description": "Average study hours per week."
+    },
+    "past_exam_scores": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 100,
+      "description": "Average score on all prior exams (0\u2013100)."
+    },
+    "homework_completion_rate": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "minimum": 0,
+      "maximum": 100,
+      "description": "Percentage of homework submitted (0\u2013100). Optional \u2013 may be null."
+    },
+    "final_grade": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "minimum": 0,
+      "maximum": 100,
+      "description": "Target: final course grade percentage. Null at inference time."
+    }
+  }
+}
